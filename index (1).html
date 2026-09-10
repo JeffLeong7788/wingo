@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WOHO Game — Official Access</title>
+  <meta name="description" content="Explore WOHO Game, learn about the platform and access official support." />
+  <style>
+    :root{
+      --bg:#06140b;--bg2:#0a1f11;--panel:#0d2615;--panel2:#12331c;
+      --gold:#f0c64f;--gold2:#d79b1e;--text:#f7f5eb;--muted:#b9c7bc;
+      --green:#1f7d3d;--line:rgba(240,198,79,.25)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--text);
+      background:
+        radial-gradient(circle at 15% 10%,rgba(30,125,61,.18),transparent 28%),
+        radial-gradient(circle at 85% 15%,rgba(240,198,79,.08),transparent 24%),
+        linear-gradient(180deg,var(--bg),var(--bg2));
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1120px;margin:auto;padding:0 22px}
+    header{
+      position:sticky;top:0;z-index:20;background:rgba(5,18,10,.92);
+      border-bottom:1px solid rgba(255,255,255,.06);backdrop-filter:blur(12px)
+    }
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:122px;height:auto;display:block}
+    .navlinks{display:flex;gap:20px;font-size:14px;color:#d8e1da}
+    .navcta{
+      padding:11px 17px;border-radius:999px;background:linear-gradient(135deg,var(--gold),#f6dc7a);
+      color:#0a2412;font-weight:900
+    }
+    .hero{padding:76px 0 52px}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:42px;align-items:center}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid var(--line);
+      border-radius:999px;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.8px
+    }
+    h1{font-size:clamp(44px,7vw,78px);line-height:.97;margin:21px 0 18px;letter-spacing:-2.5px}
+    h1 span{color:var(--gold)}
+    .lead{font-size:19px;line-height:1.65;color:#d3ddd5;max-width:650px}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0 14px}
+    .btn{
+      padding:15px 22px;border-radius:14px;font-weight:900;display:inline-flex;align-items:center;
+      justify-content:center;min-width:190px
+    }
+    .btn-primary{background:linear-gradient(135deg,var(--gold),#f6dc7a);color:#0a2412}
+    .btn-secondary{background:#0d2515;border:1px solid var(--line)}
+    .micro{font-size:12px;color:#90a193;line-height:1.6;max-width:720px}
+    .device{
+      min-height:520px;border-radius:34px;padding:18px;
+      background:linear-gradient(145deg,#1b572f,#0c2112 58%,#08140b);
+      border:1px solid rgba(240,198,79,.35);
+      box-shadow:0 30px 85px rgba(0,0,0,.38), inset 0 0 50px rgba(240,198,79,.05)
+    }
+    .device-inner{height:100%;border-radius:26px;background:#071b0d;padding:22px;position:relative;overflow:hidden}
+    .device-inner:before{
+      content:"";position:absolute;inset:-25%;background:radial-gradient(circle,rgba(240,198,79,.18),transparent 35%);
+      transform:translate(22%,-18%)
+    }
+    .hero-logo{position:relative;text-align:center;padding:22px 12px 16px}
+    .hero-logo img{width:min(86%,390px);filter:drop-shadow(0 18px 26px rgba(0,0,0,.35))}
+    .preview-title{position:relative;text-align:center;font-size:22px;font-weight:900;margin-top:8px}
+    .preview-sub{position:relative;text-align:center;color:#aec0b2;font-size:14px;margin-top:8px}
+    .cards{position:relative;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}
+    .card{height:116px;border-radius:18px;background:linear-gradient(145deg,#12381f,#0b2414);border:1px solid rgba(255,255,255,.06);padding:14px;display:flex;flex-direction:column;justify-content:flex-end}
+    .card b{font-size:15px}
+    .card span{font-size:12px;color:#91a294;margin-top:4px}
+    section{padding:44px 0}
+    .section-title{font-size:34px;margin:0 0 10px}
+    .section-sub{color:var(--muted);max-width:720px;line-height:1.7}
+    .features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+    .feature{background:linear-gradient(180deg,var(--panel),#0a1f11);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:22px}
+    .feature .icon{font-size:26px}
+    .feature h3{margin:12px 0 8px;font-size:17px}
+    .feature p{margin:0;color:#aebbb0;font-size:14px;line-height:1.55}
+    .notice{
+      background:linear-gradient(135deg,#0d2816,#12361d);border:1px solid var(--line);
+      border-radius:24px;padding:28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center
+    }
+    .notice h3{font-size:24px;margin:0 0 8px}
+    .notice p{margin:0;color:#b7c4b9;line-height:1.6}
+    footer{padding:44px 0 60px;border-top:1px solid rgba(255,255,255,.06);margin-top:28px}
+    .footgrid{display:grid;grid-template-columns:1.3fr .7fr .7fr;gap:24px}
+    footer img{width:140px}
+    footer h4{margin:0 0 12px}
+    footer p,footer a{color:#92a294;font-size:13px;line-height:1.8}
+    .legal{margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.06);color:#7f8f82;font-size:12px;line-height:1.7}
+    @media(max-width:850px){
+      .hero-grid{grid-template-columns:1fr} .features{grid-template-columns:1fr 1fr}
+      .navlinks{display:none} .notice{grid-template-columns:1fr} .footgrid{grid-template-columns:1fr}
+      .device{min-height:440px}
+    }
+    @media(max-width:520px){
+      .hero{padding-top:54px} .features{grid-template-columns:1fr} .actions{flex-direction:column}
+      .btn{width:100%} h1{font-size:50px} .brand img{width:106px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><img src="assets/woho-logo.png" alt="WOHO Game"></a>
+    <nav class="navlinks">
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#support">Support</a>
+      <a href="#legal">Legal</a>
+    </nav>
+    <a class="navcta" href="https://wgo7.com/2BJ" target="_blank" rel="noopener">Get WOHO</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">OFFICIAL WOHO ACCESS</div>
+        <h1>Play. Explore.<br><span>Enjoy WOHO.</span></h1>
+        <p class="lead">
+          Discover the WOHO mobile gaming experience, explore available games,
+          learn how the platform works, and reach our official support team when you need help.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://wgo7.com/2BJ" target="_blank" rel="noopener">DOWNLOAD WOHO</a>
+          <a class="btn btn-secondary" href="https://t.me/SuperRazor_Ceo" target="_blank" rel="noopener">TELEGRAM SUPPORT</a>
+        </div>
+        <p class="micro">
+          18+ only. Availability and features may vary by location. Any real-money features, where legally offered,
+          are subject to local law, eligibility requirements and WOHO platform terms.
+        </p>
+      </div>
+
+      <div class="device" aria-label="WOHO mobile experience preview">
+        <div class="device-inner">
+          <div class="hero-logo"><img src="assets/woho-logo.png" alt="WOHO Game logo"></div>
+          <div class="preview-title">Your WOHO Experience Starts Here</div>
+          <div class="preview-sub">Explore the platform, discover games and stay connected with official support.</div>
+          <div class="cards">
+            <div class="card"><b>Popular Games</b><span>Discover available titles</span></div>
+            <div class="card"><b>Daily Updates</b><span>See what’s new on WOHO</span></div>
+            <div class="card"><b>Easy Access</b><span>Designed for supported mobile devices</span></div>
+            <div class="card"><b>Official Support</b><span>Direct Telegram assistance</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2 class="section-title">Get to know WOHO first</h2>
+      <p class="section-sub">
+        Review the platform, available features, support options and important account information before getting started.
+      </p>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="features">
+        <div class="feature"><div class="icon">🎮</div><h3>Game Discovery</h3><p>Explore available games and find the experience that suits you.</p></div>
+        <div class="feature"><div class="icon">📱</div><h3>Mobile Friendly</h3><p>Built for convenient access from supported mobile devices.</p></div>
+        <div class="feature"><div class="icon">💬</div><h3>Official Support</h3><p>Reach WOHO support directly through our official Telegram channel.</p></div>
+        <div class="feature"><div class="icon">🛡️</div><h3>Clear Information</h3><p>Review platform rules, access information and applicable terms.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="support">
+    <div class="wrap">
+      <div class="notice">
+        <div>
+          <h3>Need help before you download?</h3>
+          <p>Contact our official Telegram support for installation questions, account access and general platform information.</p>
+        </div>
+        <a class="btn btn-primary" href="https://t.me/SuperRazor_Ceo" target="_blank" rel="noopener">CONTACT SUPPORT</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="legal">
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <img src="assets/woho-logo.png" alt="WOHO Game">
+        <p>Official information and support access for the WOHO mobile platform.</p>
+      </div>
+      <div>
+        <h4>Information</h4>
+        <p>
+          <a href="#">Terms & Conditions</a><br>
+          <a href="#">Privacy Policy</a><br>
+          <a href="#">Responsible Play</a>
+        </p>
+      </div>
+      <div>
+        <h4>Official Support</h4>
+        <p><a href="https://t.me/SuperRazor_Ceo" target="_blank" rel="noopener">@SuperRazor_Ceo</a></p>
+      </div>
+    </div>
+    <div class="legal">
+      WOHO is intended for adults aged 18+ only. Gaming laws and availability differ by jurisdiction.
+      Users are responsible for confirming that access and participation are permitted in their location.
+      Please play responsibly.
+    </div>
+  </div>
+</footer>
+</body>
+</html>
